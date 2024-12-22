@@ -103,6 +103,13 @@ impl Toasts {
         }
     }
 
+    /// Forcefully removes the oldest toast.
+    pub fn remove_oldest_toast(&mut self) {
+        if !self.is_empty() {
+            self.toasts.remove(0);
+        }
+    }
+
     /// Returns the number of toast items.
     pub fn len(&self) -> usize {
         self.toasts.len()
